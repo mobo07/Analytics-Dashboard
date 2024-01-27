@@ -2,28 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* ======================== PRESETS ======================== */
+
+h1 {
+  @apply text-[4rem] font-semibold;
+}
+h2 {
+  @apply text-5xl font-semibold;
+}
+h3 {
+  @apply text-[2rem] font-semibold;
+}
+h4 {
+  @apply text-2xl font-semibold;
+}
+h5 {
+  @apply text-xl font-semibold;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --text-xl: 1.125rem;
+    --text-lg: 1rem;
+    --text-md: 0.875rem;
+    --text-sm: 0.75rem;
+    --text-xs: 0.625rem;
+    --primary: #bb372f;
+    --secondary: #3a3f51;
+    --success: #00ac56;
+    --error: #ff1f7d;
+    --warning: #f5bf3d;
+    --bg: #fdfdfd;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #b2abab;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    /* --gray-700: #404040; */
+    --gray-700: #27272a;
+    --dark-bg-primary: #0c0a09;
+    --dark-bg-secondary: #181818;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  ::-webkit-scrollbar {
+    width: 0.4em;
+    height: 0.4em;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 100vw;
+    margin-block: 0.5em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100vw;
+    background: var(--gray-300);
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .icon svg:hover path {
+    /* stroke: #000; */
+    stroke: #34caa5;
+  }
+
+  path {
+    transition: stroke 250ms ease-in-out;
+  }
+
+  .selected {
+    position: relative;
+  }
+
+  .selected::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 80%;
+    right: 0;
+    background-color: black;
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+  }
 }
 
 @layer utilities {
