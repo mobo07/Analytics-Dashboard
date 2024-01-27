@@ -65,6 +65,10 @@ h5 {
     display: none;
   }
 
+  .sidebar {
+    transition: width 200ms ease-in;
+  }
+
   .icon svg:hover path {
     /* stroke: #000; */
     stroke: #34caa5;
