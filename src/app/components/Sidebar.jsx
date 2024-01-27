@@ -14,7 +14,7 @@ import ForwardIcon from "./icons/ForwardIcon";
 import SettingsIcon from "./icons/SettingsIcon";
 import LogoutIcon from "./icons/LogoutIcon";
 import { useContext } from "react";
-import { SidebarContext } from "../context/SideBarContext";
+import { SidebarContext } from "../context/SidebarContext";
 import { cn } from "../utils/cn";
 
 export default function Sidebar() {

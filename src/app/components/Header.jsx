@@ -9,7 +9,7 @@ import CalendarIcon from "./icons/CalendarIcon";
 import logo from "../assets/logo.svg";
 import MobileSearch from "./MobileSearch";
 import { useContext } from "react";
-import { SidebarContext } from "../context/SideBarContext";
+import { SidebarContext } from "../context/SidebarContext";
 
 export default function Header() {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
