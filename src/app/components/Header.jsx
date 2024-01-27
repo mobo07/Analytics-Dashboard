@@ -3,9 +3,9 @@
 import SearchBar from "./SearchBar";
 import profilePhoto from "../assets/people/profile-photo.png";
 import Image from "next/image";
-import BellIcon from "./icons/BellIcon";
-import ArrowDownIcon from "./icons/ArrowDownIcon";
-import CalendarIcon from "./icons/CalendarIcon";
+import bellIcon from "../assets/icons/bell-icon.svg";
+import arrowDownIcon from "../assets/icons/arrow-down.svg";
+import calendarIcon from "../assets/icons/calender.svg";
 import logo from "../assets/logo.svg";
 import MobileSearch from "./MobileSearch";
 import { useContext } from "react";
@@ -34,12 +34,16 @@ export default function Header() {
         </div>
         <div className="flex items-center gap-3">
           <div className="text-sm flex items-center gap-3 font-semibold">
-            <CalendarIcon />
+            <Image
+              src={calendarIcon}
+              alt="calendar-icon"
+              className="hidden sm:block"
+            />
             <p className="hidden text-nowrap sm:block">January 24, 2024</p>
             {/* This component only shows on small screen sizes */}
             <MobileSearch />
             <span className="rounded-full border border-[var(--gray-200)] p-2 cursor-pointer dark:border-[var(--gray-700)]">
-              <BellIcon />
+              <Image src={bellIcon} alt="bell-icon" />
             </span>
           </div>
           {/* Profile */}
@@ -56,7 +60,11 @@ export default function Header() {
               <p className="text-xs text-[var(--gray-300)]">justin@gmail.com</p>
             </div>
             <span className="hidden lg:block">
-              <ArrowDownIcon />
+              <Image
+                src={arrowDownIcon}
+                alt="arrow-down-icon"
+                className="cursor-pointer"
+              />
             </span>
           </div>
         </div>

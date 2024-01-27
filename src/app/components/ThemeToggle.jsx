@@ -1,6 +1,7 @@
 "use client";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import MoonIcon from "../components/icons/MoonIcon";
+import moonIcon from "../assets/icons/moon-icon.svg";
+import Image from "next/image";
 
 const ThemeToggle = ({ currentTheme, setTheme }) => {
   return (
@@ -12,7 +13,22 @@ const ThemeToggle = ({ currentTheme, setTheme }) => {
           currentTheme === "dark" && setTheme("light");
         }}
       />
-      <MoonIcon setTheme={setTheme} currentTheme={currentTheme} />
+
+      <div
+        className="p-[1px] rounded-full dark:bg-[#34CAA5] transition-colors duration-200 ease-in-out cursor-pointer"
+        onClick={() => {
+          currentTheme === "light" && setTheme("dark");
+        }}
+      >
+        <Image
+          src={moonIcon}
+          alt="moon-icon"
+          className="cursor-pointer"
+          onClick={() => {
+            currentTheme === "dark" && setTheme("light");
+          }}
+        />
+      </div>
     </div>
   );
 };

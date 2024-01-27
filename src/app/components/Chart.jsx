@@ -3,16 +3,14 @@ import Image from "next/image";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 import { useState } from "react";
-import ArrowDownIcon from "./icons/ArrowDownIcon";
+import arrowDownIcon from "../assets/icons/arrow-down.svg";
 
 const data = [
   {
@@ -86,7 +84,12 @@ export default function Chart() {
           Sort by:
           <div className="relative flex gap-3 items-center px-2 py-1 rounded-[999px] border  border-[var(--gray-200)] select-none dark:border-[var(--gray-700)]">
             <p>{selectedValue}</p>
-            <ArrowDownIcon handleDropDown={handleDropDown} />
+            <Image
+              src={arrowDownIcon}
+              alt="arrow-down-icon"
+              className="cursor-pointer"
+              onClick={handleDropDown}
+            />
             {isOpen && (
               <div className="absolute top-8 left-0 z-50 w-full bg-white border border-[var(--gray-200)] rounded-md shadow-sm dark:bg-[var(--dark-bg-secondary)] dark:border-[var(--gray-700)]">
                 <span

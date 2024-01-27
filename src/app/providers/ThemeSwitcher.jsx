@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import ThemeToggle from "../components/ThemeToggle";
-// import ThemeToggle from "../components/ThemeToggle";
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
