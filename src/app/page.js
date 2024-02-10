@@ -1,3 +1,4 @@
+"use client";
 import CardWidget from "./components/CardWidget";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -8,14 +9,22 @@ import coin from "./assets/icons/coin.png";
 import TableWidget from "./components/TableWidget";
 import ProgressWidget from "./components/ProgressWidget";
 import Chart from "./components/Chart";
+import Backdrop from "./components/Backdrop";
+import { useContext } from "react";
+import { SidebarContext } from "./context/SidebarContext";
 
 export default function Dashboard() {
+  const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
   return (
     // ================= Container =================
-    <div className="relative w-full max-w-[90rem] mx-auto bg-[var(--gray-50)] flex dark:bg-[var(--dark-bg-primary)]">
+    <div className="relative w-full bg-[var(--gray-50)] dark:bg-[var(--dark-bg-primary)]">
       <Sidebar />
-      <main className="relative w-full sm:w-[calc(100%-4rem)] min-h-screen dark:text-[var(--gray-400)]">
-        <Header />
+      {isSidebarOpen && (
+        <Backdrop show={isSidebarOpen} setShow={setIsSidebarOpen} />
+      )}
+
+      <Header />
+      <main className="relative w-full max-w-[1440px] sm:ml-16 2xl:mx-auto mt-[5.2rem] sm:w-[calc(100%-4rem)] min-h-screen dark:text-[var(--gray-400)]">
         <div className="grid grid-cols-12 gap-3 p-4">
           <div className="bg-white px-4 py-5 col-span-12 rounded-lg border border-[var(--gray-100)] lg:col-span-7 dark:bg-[var(--dark-bg-secondary)] dark:border-[var(--gray-700)]">
             <Chart />

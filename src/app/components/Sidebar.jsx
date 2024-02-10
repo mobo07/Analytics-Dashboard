@@ -14,8 +14,8 @@ export default function Sidebar() {
   return (
     <div
       className={cn(
-        "sidebar sticky top-0 left-0 z-50 w-0 py-3 h-screen overflow-y-scroll bg-[#F7F8FA] border-r border-[var(--gray-200)] dark:bg-[var(--dark-bg-primary)] dark:border-[var(--gray-700)] sm:w-16",
-        isSidebarOpen ? "w-16" : "w-0"
+        "sidebar fixed top-0 sm:left-0 z-50 w-16 py-3 h-screen overflow-y-scroll bg-[#F7F8FA] border-r border-[var(--gray-200)] dark:bg-[var(--dark-bg-primary)] dark:border-[var(--gray-700)]",
+        isSidebarOpen ? "left-0 z-[100]" : "left-[-4rem]"
       )}
     >
       <Image
