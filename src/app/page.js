@@ -24,7 +24,7 @@ export default function Dashboard() {
       )}
 
       <Header />
-      <main className="relative w-full max-w-[1440px] sm:ml-16 2xl:mx-auto mt-[5.2rem] sm:w-[calc(100%-4rem)] min-h-screen dark:text-[var(--gray-400)]">
+      <main className="relative w-full max-w-[1440px] sm:ml-16 2xl:mx-auto mt-[4.2rem] sm:mt-[5.2rem] sm:w-[calc(100%-4rem)] min-h-screen dark:text-[var(--gray-400)]">
         <div className="grid grid-cols-12 gap-3 p-4">
           <div className="bg-white px-4 py-5 col-span-12 rounded-lg border border-[var(--gray-100)] lg:col-span-7 dark:bg-[var(--dark-bg-secondary)] dark:border-[var(--gray-700)]">
             <Chart />
